@@ -380,6 +380,12 @@ public final class TypeHandlerRegistry {
         register((Type) javaType, typeHandler);
     }
 
+    /**
+     * 对TypeHandler进行注册
+     * @param javaType
+     * @param typeHandler
+     * @param <T>
+     */
     private <T> void register(Type javaType, TypeHandler<? extends T> typeHandler) {
         // 尝试从TypeHandler类中获取@MappedJdbcTypes注解
         MappedJdbcTypes mappedJdbcTypes = typeHandler.getClass().getAnnotation(MappedJdbcTypes.class);
@@ -411,6 +417,13 @@ public final class TypeHandlerRegistry {
         register((Type) type, jdbcType, handler);
     }
 
+    /**
+     * @param javaType
+     * @param jdbcType
+     * @param handler
+     *
+     * 把接口作为参数定义方法
+     */
     private void register(Type javaType, JdbcType jdbcType, TypeHandler<?> handler) {
         if (javaType != null) { // 检测是否明确指定了TypeHandler能够处理的Java类型
             // 根据指定的Java类型，从typeHandlerMap集合中获取相应的TypeHandler集合
