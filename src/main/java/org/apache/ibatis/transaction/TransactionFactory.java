@@ -24,7 +24,9 @@ import org.apache.ibatis.session.TransactionIsolationLevel;
 
 /**
  * Creates {@link Transaction} instances.
- *
+ * TransactionFactory 是用于创建 Transaction 的工厂接口，
+ * 其中最核心的方法是 newTransaction() 方法，
+ * 它会根据数据库连接或数据源创建 Transaction 对象。
  * @author Clinton Begin
  */
 public interface TransactionFactory {
