@@ -22,6 +22,9 @@ import java.io.Closeable;
  * Cursors are a perfect fit to handle millions of items queries that would not normally fits in memory.
  * If you use collections in resultMaps then cursor SQL queries must be ordered (resultOrdered="true")
  * using the id columns of the resultMap.
+ * 游标约定，用于使用迭代器延迟处理获取项。
+ * 游标非常适合处理数百万个通常不适合内存的项目查询。
+ * 如果在 resultMap 中使用集合，则必须使用 resultMap 的 id 列对游标 SQL 查询进行排序 （resultOrdered=“true”）。
  *
  * @author Guillaume Darmont / guillaume@dropinocean.com
  */
